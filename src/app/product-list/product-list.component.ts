@@ -15,16 +15,16 @@ export class ProductListComponent {
       price: 500,
       stock: 20,
       image: "assets/img/tradicional.png",
-      clearance: false,
+      sale: false,
     },
     {
       type: "Premium",
       taste: "Amargo moderado",
       weight: 500,
-      price: 499.99,
+      price: 599.99,
       stock: 5,
       image: "assets/img/premium.png",
-      clearance: true,
+      sale: true,
     },
     {
       type: "Compuesta",
@@ -33,7 +33,7 @@ export class ProductListComponent {
       price: 550,
       stock: 12,
       image: "assets/img/compuesta.png",
-      clearance: false,
+      sale: false,
     },
     {
       type: "Classica",
@@ -42,7 +42,7 @@ export class ProductListComponent {
       price: 480,
       stock: 0,
       image: "assets/img/classica.png",
-      clearance: false,
+      sale: false,
     },
     {
       type: "Padron Argentino",
@@ -51,7 +51,7 @@ export class ProductListComponent {
       price: 550,
       stock: 12,
       image: "assets/img/padron-arg.png",
-      clearance: false,
+      sale: true,
     },
     {
       type: "Canarias",
@@ -60,7 +60,7 @@ export class ProductListComponent {
       price: 650,
       stock: 0,
       image: "assets/img/canarias.png",
-      clearance: false, 
+      sale: false, 
     }
   ];
   
