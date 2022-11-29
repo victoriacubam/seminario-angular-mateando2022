@@ -1,0 +1,21 @@
+
+#cart {
+    display: flex;
+    justify-content: center;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (min-width: 1213px) {
+    #container {
+        display: flex;
+        flex-direction: row;
+    }
+    #cart {
+        display: flex;
+        justify-content: center;
+    }
+}

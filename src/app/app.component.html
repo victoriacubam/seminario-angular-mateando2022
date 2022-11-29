@@ -2,28 +2,23 @@
   <div class="container-fluid">
     <div class="d-flex align-items-center">
       <img src="../assets/img/logo.png" alt="logo" id="logo">
-      <a class="navbar-brand" href="#">{{title}}</a>
+      <a class="navbar-brand" [routerLink]="['/products']">{{title}}</a>
     </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav justify-content-center">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">Contacto</a>
+        <a class="nav-link active" aria-current="page" [routerLink]="['/products']">Home</a>
+        <a class="nav-link" [routerLink]="['/information']">Mas informacion</a>
+        <a class="nav-link"  [routerLink]="['/about']">Contacto</a>
       </div>
     </div>
   </div>
 </nav>
-<div class="container" id="container">
-  <div class="row">
-    <div class="col-8">
-      <app-product-list></app-product-list>
-    </div>
-    <div class="col-4">
-      <app-shopping-cart></app-shopping-cart>
-    </div>
-  </div>
+
+<div class="container">
+    <router-outlet></router-outlet>
 </div>
 
 <footer class="footer mt-auto py-3 bg-light">

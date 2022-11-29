@@ -1,3 +1,4 @@
+import { KeyValue } from '@angular/common';
 import { Component } from '@angular/core';
 import { Product } from './Product'
 
@@ -16,6 +17,7 @@ export class ProductListComponent {
       stock: 20,
       image: "assets/img/tradicional.png",
       sale: false,
+      quantity: 0,
     },
     {
       type: "Premium",
@@ -25,6 +27,7 @@ export class ProductListComponent {
       stock: 5,
       image: "assets/img/premium.png",
       sale: true,
+      quantity: 0,
     },
     {
       type: "Compuesta",
@@ -34,6 +37,7 @@ export class ProductListComponent {
       stock: 12,
       image: "assets/img/compuesta.png",
       sale: false,
+      quantity: 0,
     },
     {
       type: "Classica",
@@ -43,6 +47,7 @@ export class ProductListComponent {
       stock: 0,
       image: "assets/img/classica.png",
       sale: false,
+      quantity: 0,
     },
     {
       type: "Padron Argentino",
@@ -52,6 +57,7 @@ export class ProductListComponent {
       stock: 12,
       image: "assets/img/padron-arg.png",
       sale: true,
+      quantity: 0,
     },
     {
       type: "Canarias",
@@ -60,13 +66,33 @@ export class ProductListComponent {
       price: 650,
       stock: 0,
       image: "assets/img/canarias.png",
-      sale: false, 
+      sale: false,
+      quantity: 0,
     }
   ];
-  
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  upQuantity(product: Product): void {
+    if(product.quantity<product.stock)
+      product.quantity++;
+    /*else
+      alert("No hay stock suficiente");*/
+  }
+
+  downQuantity(product: Product): void {
+    if(product.quantity>0)
+      product.quantity--;
+  }
+
+ /* changeQuantity(event:any, product: Product): void {
+    if(event.key>product.quantity){
+      //event.preventDefault();
+      console.log(event.key)
+    }
+  }*/
 
 }

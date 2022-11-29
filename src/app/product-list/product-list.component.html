@@ -8,6 +8,7 @@
             <th class="text-center">Peso</th>
             <th class="text-center">Precio</th>
             <th hidden>Stock</th>
+            <th hidden>Cantidad</th>
             <th hidden>Comprar</th>
         </tr>
     </thead>
@@ -20,14 +21,39 @@
             <td>{{product.price | currency}}</td>
             <td>
                 <span class="badge text-bg-warning" *ngIf="product.stock==0">Sin stock</span>
-                <span class="badge text-bg-success" *ngIf="product.stock!=0 && product.sale">SALE!</span>
+                <span class="badge text-bg-success" *ngIf="product.stock!=0 && product.sale">15% OFF</span>
+            </td>
+            <td>
+                <div class="cantidad">
+                    <button class="btn btn-light" (click)="downQuantity(product)">-</button>
+                     <input [(ngModel)]="product.quantity" class="text-center"> <!--(keyup)="changeQuantity($event, product)"  -->
+                    <button class="btn btn-light" (click)="upQuantity(product)" >+</button>
+                </div>
             </td>
             <td>
                 <input class="btn btn-primary" type="submit" value="Agregar al carrito" *ngIf="product.stock!=0 else elseBlock">
-                <ng-template #elseBlock> 
+                <ng-template #elseBlock>
                     <input class="btn btn-primary" type="submit" value="Agregar al carrito" disabled>
                 </ng-template>
             </td>
         </tr>
     </tbody>
 </table>
+
+<!-- data-bs-toggle="modal" data-bs-target="#staticBackdrop" -->
+<!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">No hay stock</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        No contamos con el stock suficiente para
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div> -->
