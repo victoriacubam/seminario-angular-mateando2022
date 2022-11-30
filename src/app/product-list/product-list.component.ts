@@ -76,23 +76,11 @@ export class ProductListComponent {
   ngOnInit(): void {
   }
 
-  upQuantity(product: Product): void {
-    if(product.quantity<product.stock)
-      product.quantity++;
-    /*else
-      alert("No hay stock suficiente");*/
+  maxReached(msg: string) {
+    alert(msg);
   }
 
-  downQuantity(product: Product): void {
-    if(product.quantity>0)
-      product.quantity--;
-  }
 
- /* changeQuantity(event:any, product: Product): void {
-    if(event.key>product.quantity){
-      //event.preventDefault();
-      console.log(event.key)
-    }
-  }*/
+
 
 }

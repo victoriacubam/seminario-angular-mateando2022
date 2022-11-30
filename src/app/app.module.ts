@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { MateandoProductsComponent } from './mateando-products/mateando-products.component';
 import { MateandoProductsInfoComponent } from './mateando-products-info/mateando-products-info.component';
 import { MateandoAboutComponent } from './mateando-about/mateando-about.component';
+import { InputQuantityComponent } from './input-quantity/input-quantity.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { MateandoAboutComponent } from './mateando-about/mateando-about.componen
     ShoppingCartComponent,
     MateandoProductsComponent,
     MateandoProductsInfoComponent,
-    MateandoAboutComponent
+    MateandoAboutComponent,
+    InputQuantityComponent
   ],
   imports: [
     BrowserModule,
