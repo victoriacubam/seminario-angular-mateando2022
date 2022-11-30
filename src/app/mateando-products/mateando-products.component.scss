@@ -1,0 +1,17 @@
+#container {
+  display: flex;
+  flex-direction: column;
+}
+#cart{
+  width: 600px;
+}
+@media only screen and (min-width: 1213px) {
+  #container {
+      display: flex;
+      flex-direction: row;
+  }
+  #cart {
+      display: flex;
+      justify-content: center;
+  }
+}

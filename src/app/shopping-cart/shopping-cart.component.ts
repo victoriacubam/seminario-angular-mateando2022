@@ -11,6 +11,7 @@ import { ShoppingCartService } from '../shopping-cart.service';
 export class ShoppingCartComponent implements OnInit{
 
   shopCart$: Observable<Product[]>;
+
   constructor(private cart: ShoppingCartService){
     this.shopCart$ = cart.shopCart.asObservable();
   }
@@ -18,11 +19,15 @@ export class ShoppingCartComponent implements OnInit{
   ngOnInit(): void {
   }
 
-  empty(){
+  empty() : void {
     this.cart.empty();
   }
 
-  deleteP(product : Product){
+  deleteP(product : Product) : void {
     this.cart.deleteP(product);
   }
+
+
+
+
 }
