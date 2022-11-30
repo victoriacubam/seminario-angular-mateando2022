@@ -1,5 +1,6 @@
-import { KeyValue } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ProductDataService } from '../product-data.service';
+import { ShoppingCartService } from '../shopping-cart.service';
 import { Product } from './Product'
 
 @Component({
@@ -7,80 +8,32 @@ import { Product } from './Product'
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss']
 })
-export class ProductListComponent {
-  products: Product[] = [
-    {
-      type: "Tradicional",
-      taste: "Amargo e intenso",
-      weight: 500,
-      price: 500,
-      stock: 20,
-      image: 'https://github.com/victoriacubam/seminario-angular-mateando2022/blob/master/src/assets/img/tradicional.png?raw=true',
-      sale: false,
-      quantity: 0,
-    },
-    {
-      type: "Premium",
-      taste: "Amargo moderado",
-      weight: 500,
-      price: 599.99,
-      stock: 5,
-      image: "https://github.com/victoriacubam/seminario-angular-mateando2022/blob/master/src/assets/img/premium.png?raw=true",
-      sale: true,
-      quantity: 0,
-    },
-    {
-      type: "Compuesta",
-      taste: "Leve gusto a hiervas",
-      weight: 500,
-      price: 550,
-      stock: 12,
-      image: "https://github.com/victoriacubam/seminario-angular-mateando2022/blob/master/src/assets/img/compuesta.png?raw=true",
-      sale: false,
-      quantity: 0,
-    },
-    {
-      type: "Classica",
-      taste: "Moderadamente intenso. Fino aroma. Levemente ahumado y parejo",
-      weight: 500,
-      price: 480,
-      stock: 0,
-      image: "https://github.com/victoriacubam/seminario-angular-mateando2022/blob/master/src/assets/img/classica.png?raw=true",
-      sale: false,
-      quantity: 0,
-    },
-    {
-      type: "Padron Argentino",
-      taste: "Intenso",
-      weight: 500,
-      price: 550,
-      stock: 12,
-      image: "https://github.com/victoriacubam/seminario-angular-mateando2022/blob/master/src/assets/img/padron-arg.png?raw=true",
-      sale: true,
-      quantity: 0,
-    },
-    {
-      type: "Canarias",
-      taste: "Amargo e intenso",
-      weight: 500,
-      price: 650,
-      stock: 0,
-      image: "https://github.com/victoriacubam/seminario-angular-mateando2022/blob/master/src/assets/img/canarias.png?raw=true",
-      sale: false,
-      quantity: 0,
-    }
-  ];
+export class ProductListComponent implements OnInit{
 
-  constructor() { }
+  products: Product[] = [];
+
+  constructor(
+    private cart: ShoppingCartService,
+    private productsDataService: ProductDataService) {
+  }
 
   ngOnInit(): void {
+    this.productsDataService.getAll()
+      .subscribe(products => this.products = products);
   }
 
   maxReached(msg: string) {
-    alert(msg);
+    alert(msg); //Hacer una funcion que muestre un modal con [()] en el html que sea *ngIf(error) aparece el modal
   }
 
+  addToCart(product) : void{
+    if(product.quantity!=0){
+      this.cart.addToCart(product);
+      product.stock-=product.quantity;
+      product.quantity = 0;
 
+    }
+  }
 
 
 }

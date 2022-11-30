@@ -2,10 +2,12 @@
 <div class="container d-flex justify-content-center mt-5" id="shopping-cart">
     <div style="width: 100%;" >
         <main id="items" class="col-sm-8 row text-center">
-            <ul>
-                <li>Producto 1</li>
-                <li>Producto 2</li>            
-
+            <ul class="row" width="500">
+                <li *ngFor="let p of (shopCart$ | async)"  width="300">
+                  <img class="img-thumbnail" width="35px" src="{{p.image}}">
+                  {{p.type}} : {{p.quantity}}
+                  <button class="btn btn-danger" (click)="deleteP(p)">x</button>
+                </li>
             </ul>
         </main>
         <aside class="col-sm-4">
@@ -14,7 +16,7 @@
             <hr>
             <!-- Precio total -->
             <p class="text-right">Total: <span id="total"></span></p>
-            <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+            <button id="boton-vaciar" (click)="empty()" class="btn btn-danger">Vaciar</button>
         </aside>
     </div>
 </div>
