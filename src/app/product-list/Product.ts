@@ -7,4 +7,7 @@ export interface Product {
   image: string;
   sale: boolean;
   quantity: number;
+  brand: string;
+  description: string;
+  perfomance: string;
 }

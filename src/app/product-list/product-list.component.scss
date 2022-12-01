@@ -3,14 +3,24 @@ img {
 }
 
 .sale {
-    background-color: rgb(189, 255, 189);
-    color:rgb(8, 80, 8);
+    background-color: #ff8888;
+    color:#ffffdd;
     font-weight: bold;
 }
 
 table {
-    background-color: rgb(242, 233, 255);
+    background-color:#ffffdd;
     border-radius: 10px;
+}
+
+.btn {
+  background-color: #e25858;
+  color: white;
+  font-weight: bold;
+}
+
+tr{
+  padding: 20px;
 }
 
 // .oculto {

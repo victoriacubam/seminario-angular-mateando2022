@@ -1,65 +1,45 @@
-<h1 class="text-center mt-5">Mas informacion a cerca de nuestros productos</h1>
-<div>
-  <div class="product">
-    <img width="150" class="img-thumbnail" src=".https://github.com/victoriacubam/seminario-angular-mateando2022/blob/master/src/assets/img/tradicional.png?raw=true" alt="canarias">
-    <h2 class="text-center"><span>REI VERDE EXPORT</span> Tradicional</h2>
-    <p>Yerba mate con la mayor proporción de hoja nativa y un adecuado equilibrio entre polvo y palo. Producto 100% natural sin agregados artificiales de conservantes ni otros productos químicos, por lo que en ocasiones pueden presentarse leves variaciones en el sabor a lo largo del año. </p>
-    <h3> Rendimiento</h3>
-    <p>Por las propiedades de su composición, este producto ofrece al consumidor una alta duración de sabor durante su consumo.
-        Para obtener este rendimiento es importante tener en cuenta los consejos para preparar un mate.
-    </p>
+<h1 class="text-center mt-5 mb-5">Mas informacion a cerca de nuestros productos</h1>
+<div class="info">
+  <div class="product" *ngFor="let product of products">
+    <img [src]="product.image" [alt]="product.type">
+    <div class="text-center desc" width="500">
+      <p>{{product.brand}}</p>
+      <h2 class="text-center">{{product.type}}</h2>
+      <p>{{product.description}}</p>
+    </div>
+    <div class="perf">
+      <h3 class="text-center"> Rendimiento</h3>
+      <p class="text-center">{{product.perfomance}}</p>
+    </div>
   </div>
-
-  <div class="product">
-    <img width="150" class="img-thumbnail" src="https://github.com/victoriacubam/seminario-angular-mateando2022/blob/master/src/assets/img/premiumpng?raw=true" alt="canarias">
-    <h2 class="text-center"><span>REI VERDE EXPORT</span> Premium</h2>
-    <p>Yerba mate con la mayor proporción de hoja nativa y un adecuado equilibrio entre polvo y palo. Producto 100% natural sin agregados artificiales de conservantes ni otros productos químicos, por lo que en ocasiones pueden presentarse leves variaciones en el sabor a lo largo del año. </p>
-    <h3> Rendimiento</h3>
-    <p>Por las propiedades de su composición, este producto ofrece al consumidor una alta duración de sabor durante su consumo.
-        Para obtener este rendimiento es importante tener en cuenta los consejos para preparar un mate.
-    </p>
-  </div>
-
-  <div class="product">
-    <img width="150" class="img-thumbnail" src="https://github.com/victoriacubam/seminario-angular-mateando2022/blob/master/src/assets/img/compuesta.png?raw=true" alt="canarias">
-    <h2 class="text-center"><span>REI VERDE EXPORT</span> Compuesta</h2>
-    <p>Yerba mate con la mayor proporción de hoja nativa y un adecuado equilibrio entre polvo y palo. Producto 100% natural sin agregados artificiales de conservantes ni otros productos químicos, por lo que en ocasiones pueden presentarse leves variaciones en el sabor a lo largo del año. </p>
-    <h3> Rendimiento</h3>
-    <p>Por las propiedades de su composición, este producto ofrece al consumidor una alta duración de sabor durante su consumo.
-        Para obtener este rendimiento es importante tener en cuenta los consejos para preparar un mate.
-    </p>
-  </div>
-
-  <div class="product">
-    <img width="150" class="img-thumbnail" src="https://github.com/victoriacubam/seminario-angular-mateando2022/blob/master/src/assets/img/classica.png?raw=true" alt="canarias">
-    <h2 class="text-center"><span>REI VERDE EXPORT</span> Classica</h2>
-    <p>Yerba mate con la mayor proporción de hoja nativa y un adecuado equilibrio entre polvo y palo. Producto 100% natural sin agregados artificiales de conservantes ni otros productos químicos, por lo que en ocasiones pueden presentarse leves variaciones en el sabor a lo largo del año. </p>
-    <h3> Rendimiento</h3>
-    <p>Por las propiedades de su composición, este producto ofrece al consumidor una alta duración de sabor durante su consumo.
-        Para obtener este rendimiento es importante tener en cuenta los consejos para preparar un mate.
-    </p>
-  </div>
-
-  <div class="product">
-    <img width="150" class="img-thumbnail" src="https://github.com/victoriacubam/seminario-angular-mateando2022/blob/master/src/assets/img/padron-arg.png?raw=true" alt="canarias">
-    <h2 class="text-center"><span>REI VERDE EXPORT</span> Padron Argentino</h2>
-    <p>Yerba mate con la mayor proporción de hoja nativa y un adecuado equilibrio entre polvo y palo. Producto 100% natural sin agregados artificiales de conservantes ni otros productos químicos, por lo que en ocasiones pueden presentarse leves variaciones en el sabor a lo largo del año. </p>
-    <h3> Rendimiento</h3>
-    <p>Por las propiedades de su composición, este producto ofrece al consumidor una alta duración de sabor durante su consumo.
-        Para obtener este rendimiento es importante tener en cuenta los consejos para preparar un mate.
-    </p>
-  </div>
-
-  <div class="product">
-    <img width="150" class="img-thumbnail" src="https://github.com/victoriacubam/seminario-angular-mateando2022/blob/master/src/assets/img/canarias.png?raw=true" alt="canarias">
-    <h2 class="text-center">Canarias</h2>
-    <p>Yerba mate con la mayor proporción de hoja nativa y un adecuado equilibrio entre polvo y palo. Producto 100% natural sin agregados artificiales de conservantes ni otros productos químicos, por lo que en ocasiones pueden presentarse leves variaciones en el sabor a lo largo del año. </p>
-    <h3> Rendimiento</h3>
-    <p>Por las propiedades de su composición, este producto ofrece al consumidor una alta duración de sabor durante su consumo.
-        Para obtener este rendimiento es importante tener en cuenta los consejos para preparar un mate.
-    </p>
-  </div>
-
-
 </div>
 
+<!-- <h1 class="text-center mt-5">Mas informacion a cerca de nuestros productos</h1>
+<div *ngFor="let product of products" class="info">
+  <img width="150" class="img-thumbnail" [src]="product.image" [alt]="product.type">
+  <p>{{product.brand}}</p>
+  <h2 class="text-center">{{product.type}}</h2>
+  <div class="accordion accordion-flush" id="accordionFlushExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingOne">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+          Descripcion
+        </button>
+      </h2>
+      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">{{product.description}}</div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+          Rendimiento
+        </button>
+      </h2>
+      <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">{{product.perfomance}}</div>
+      </div>
+    </div>
+  </div>
+
+</div> -->

@@ -1,18 +1,32 @@
 .product {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 p{
   margin: 5px;
   padding: 10px;
+  color: #ffffdd;
 }
 
 
 h2, h3 {
-  margin: 50px;
+  margin: 2px 20px 2px 20px;
+  color: #ffffdd;
 }
 
-h2 span {
-  font-size: small;
+img {
+  width: 150px;
 }
 
+.desc, .perf {
+  width: 40%;
+  padding: 20px;
+}
+
+.info {
+  background-color: #e25858;
+  border-radius: 30px;
+  padding: 40px;
+}

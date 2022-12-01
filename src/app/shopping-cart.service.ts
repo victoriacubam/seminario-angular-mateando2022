@@ -33,5 +33,4 @@ export class ShoppingCartService {
     this._shopCart.splice(index, 1);
     this.shopCart.next(this._shopCart);
   }
-
 }

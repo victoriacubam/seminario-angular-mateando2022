@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ProductDataService } from '../product-data.service';
 import { Product } from '../product-list/Product';
 import { ShoppingCartService } from '../shopping-cart.service';
 
@@ -12,7 +13,9 @@ export class ShoppingCartComponent implements OnInit{
 
   shopCart$: Observable<Product[]>;
 
-  constructor(private cart: ShoppingCartService){
+  constructor(
+      private cart: ShoppingCartService){
+
     this.shopCart$ = cart.shopCart.asObservable();
   }
 
@@ -21,10 +24,12 @@ export class ShoppingCartComponent implements OnInit{
 
   empty() : void {
     this.cart.empty();
+   // this.productsDataService.getAll();
   }
 
   deleteP(product : Product) : void {
     this.cart.deleteP(product);
+    //this.productsDataService.getAll();
   }
 
 

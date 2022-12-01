@@ -17,5 +17,6 @@ export class ProductDataService {
       .pipe(
           tap((products: Product[])=> products.forEach(product => product.quantity = 0))
         );
-      }
+  }
+  
 }

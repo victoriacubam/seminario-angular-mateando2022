@@ -1,13 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
 
 footer {
-    text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  background-color: #e25858;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+footer p {
+  margin: 0px;
+  color:#ffffdd;
+}
+
+
+nav {
+  background-color: #384252;
 }
 
 nav .navbar-brand{
     font-family: 'Satisfy', cursive;
     font-size: 50px;
-    color: rgb(77, 77, 77);
+    color: #ffffdd;
+}
+
+.nav-link {
+  color: white;
 }
 
 #logo {
@@ -19,7 +39,10 @@ nav .navbar-brand{
 }
 
 h1 {
-    color: rgb(77, 77, 77);
+    color:#ffffdd;
     font-size: xx-large;
 }
 
+body {
+  background-color: #384252;
+}
