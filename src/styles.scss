@@ -1,45 +1,9 @@
-footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 1.875rem;
-  background-color: #e25858;
-  padding: 1.25rem;
-  margin-top: 1.25rem;
-}
-
-footer p {
-  margin: 0rem;
-  color:#ffffdd;
-}
-
-nav {
+body {
   background-color: #384252;
-}
-
-nav .navbar-brand{
-    font-family: 'Satisfy', cursive;
-    font-size: 3.125rem;
-    color: #ffffdd;
-}
-
-.nav-link {
-  color: white;
-}
-
-#logo {
-    width: 2.5rem;
-}
-
-.container {
-    font-family:'Raleway', sans-serif;
+  font-family:'Raleway', sans-serif;
 }
 
 h1 {
-    color:#ffffdd;
-    font-size: xx-large;
-}
-
-body {
-  background-color: #384252;
+  color:#ffffdd;
+  font-size: xx-large;
 }
