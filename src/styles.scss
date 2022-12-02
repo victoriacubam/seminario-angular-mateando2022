@@ -7,3 +7,17 @@ h1 {
   color:#ffffdd;
   font-size: xx-large;
 }
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #ffffdd;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #384252;
+  border-radius: 20px;
+  border: 3px solid #ffffdd;
+}
