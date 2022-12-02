@@ -9,14 +9,13 @@ const URL = "https://62b5df9d42c6473c4b3c124b.mockapi.io/api/v1/products";
   providedIn: 'root'
 })
 export class ProductDataService {
-
   constructor(private http: HttpClient) { }
 
   public getAll(): Observable<Product[]>{
     return this.http.get<Product[]>(URL)
       .pipe(
-          tap((products: Product[])=> products.forEach(product => product.quantity = 0))
-        );
+        tap((products: Product[])=> products.forEach(product => product.quantity = 0))
+      );
   }
 
 

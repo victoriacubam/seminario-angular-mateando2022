@@ -1,5 +1,3 @@
-
-
 <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
   <div class="offcanvas-header">
     <h1 class="text-center mt-3 mb-3">Tus productos elegidos</h1>
@@ -9,25 +7,15 @@
     <div  id="shopping-cart">
       <div id="items" >
         <ul>
-            <li *ngFor="let p of (shopCart$ | async)">
-              <img class="img-thumbnail"src="{{p.image}}">
+            <li class="mb-2" *ngFor="let p of (shopCart$ | async)">
+              <img  width="35" class="img-thumbnail"src="{{p.image}}">
               {{p.type}} : {{p.quantity}} un.
-              <button class="btn btn-danger"  (click)="deleteP(p)">x</button>
-            </li>
-            <li>
-              <img class="img-thumbnail"src="https://github.com/victoriacubam/seminario-angular-mateando2022/blob/master/src/assets/img/canarias.png?raw=true">
-              Canarias : 5 un.
-              <button class="btn btn-danger">x</button>
-            </li>
-            <li>
-              <img class="img-thumbnail"src="https://github.com/victoriacubam/seminario-angular-mateando2022/blob/master/src/assets/img/tradicional.png?raw=true">
-              Tradicional : 2 un.
-              <button class="btn btn-danger">x</button>
+              <button class="btn btn-danger"  (click)="deleteProduct(p)">x</button>
             </li>
           </ul>
           <hr>
           <p class="text-right">Total carrito: $ {{getTotal()}}</p>
-          <button id="boton-vaciar" (click)="empty()" class="btn btn-danger">Vaciar</button>
+          <button id="boton-vaciar" (click)="cartEmpty()" class="btn btn-danger">Vaciar</button>
       </div>
     </div>
   </div>

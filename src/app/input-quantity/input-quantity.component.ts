@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Product } from '../product-list/Product';
 
 
 @Component({
@@ -41,4 +40,7 @@ export class InputQuantityComponent implements OnInit{
     }
   }
 
+   changeQuantity(quantity:number): void {
+    this.quantityChange.emit(quantity);
+  }
 }

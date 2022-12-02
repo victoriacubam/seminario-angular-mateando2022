@@ -1,11 +1,3 @@
-#shopping-cart{
-    background-color: #e25858;
-    border-radius: 10px;
-    width: 250px;
-    margin: 0px;
-    color: white;
-}
-
 .offcanvas {
   background-color: #e25858;
 }
@@ -14,7 +6,6 @@ ul {
     list-style: none;
     width: 100%;
     padding-left: 5px;
-
 }
 
 li {
@@ -22,18 +13,5 @@ li {
   align-items: center;
   width: 100%;
   justify-content: space-between;
-}
-
-img {
-  width: 35px;
-}
-
-img, button {
-  margin: 5px;
-
-}
-
-#items {
-  padding: 10px;
 }
 

@@ -4,19 +4,21 @@
       <img src="https://github.com/victoriacubam/seminario-angular-mateando2022/blob/master/src/assets/img/logo.png?raw=true" alt="logo" id="logo">
       <a class="navbar-brand" [routerLink]="['/products']">{{title}}</a>
     </div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav justify-content-center">
-        <a class="nav-link" aria-current="page" [routerLink]="['/products']">Home</a>
+        <a class="nav-link" [routerLink]="['/products']">Home</a>
         <a class="nav-link" [routerLink]="['/information']">Mas informacion</a>
-        <a class="nav-link"  [routerLink]="['/about']">Contacto</a>
+        <a class="nav-link" [routerLink]="['/about']">Contacto</a>
       </div>
     </div>
-    <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
-      <img src="https://github.com/victoriacubam/seminario-angular-mateando2022/blob/master/src/assets/img/carros.png?raw=true" alt="carrito">
-    </button>
+    <div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+        <img width="25"src="https://github.com/victoriacubam/seminario-angular-mateando2022/blob/master/src/assets/img/carros.png?raw=true" alt="carrito">
+      </button>
+    </div>
   </div>
 </nav>
 

@@ -22,7 +22,7 @@ export class ProductListComponent implements OnInit{
   }
 
   maxReached(msg: string) {
-    alert(msg); //Hacer una funcion que muestre un modal con [()] en el html que sea *ngIf(error) aparece el modal
+    alert(msg);
   }
 
   addToCart(product) : void{
@@ -32,6 +32,5 @@ export class ProductListComponent implements OnInit{
       product.quantity = 0;
     }
   }
-
 
 }

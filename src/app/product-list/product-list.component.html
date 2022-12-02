@@ -1,26 +1,25 @@
-
 <h1 class="text-center mt-3 mb-3">Nuestra variedad de yerbas</h1>
 <table class="table">
     <thead>
-        <tr>
-            <th class="oculto"></th>
-            <th scope="col" class="text-center">Tipo</th>
-            <th class="text-center oculto">Sabor</th>
-            <th class="text-center oculto">Peso</th>
-            <th class="text-center">Precio</th>
-            <th hidden class="oculto">Stock</th>
+        <tr class="text-center">
+            <th></th>
+            <th>Tipo</th>
+            <th>Sabor</th>
+            <th>Peso</th>
+            <th>Precio</th>
+            <th hidden>Stock</th>
             <th hidden>Cantidad</th>
             <th hidden>Comprar</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let product of products" [ngClass]="{'sale': product.sale && product.stock!=0}">
-            <td class="oculto"><img [src]="product.image" [alt]="product.type"></td>
+            <td><img [src]="product.image" [alt]="product.type"></td>
             <td class="text-center">{{product.type | uppercase}}</td>
-            <td class="oculto">{{product.taste}}</td>
-            <td class="oculto">{{product.weight}}<span>gr</span></td>
+            <td>{{product.taste}}</td>
+            <td>{{product.weight}}<span>gr</span></td>
             <td>{{product.price | currency}}</td>
-            <td class="oculto">
+            <td>
               <span class="badge text-bg-warning" *ngIf="product.stock==0">Sin stock</span>
               <span class="badge text-bg-success" *ngIf="product.stock!=0 && product.sale">15% OFF</span>
             </td>
@@ -34,5 +33,5 @@
               </ng-template>
             </td>
         </tr>
-    </tbody>
-</table>
+      </tbody>
+    </table>
