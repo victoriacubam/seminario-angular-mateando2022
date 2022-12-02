@@ -40,7 +40,7 @@ export class InputQuantityComponent implements OnInit{
     }
   }
 
-   changeQuantity(quantity:number): void {
+  changeQuantity(quantity:number): void {
     this.quantityChange.emit(quantity);
   }
 }

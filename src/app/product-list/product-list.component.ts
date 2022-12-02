@@ -27,10 +27,15 @@ export class ProductListComponent implements OnInit{
 
   addToCart(product) : void{
     if(product.quantity!=0){
-      this.cart.addToCart(product);
-      product.stock-=product.quantity;
-      product.quantity = 0;
+      if(product.quantity<=product.stock){
+        this.cart.addToCart(product);
+        product.stock-=product.quantity;
+      } else {
+        alert("El stock disponible es: " + product.stock);
+      }
+    } else {
+      alert('"' + product.quantity +'"' + " no es una cantidad valida");
     }
+    product.quantity = 0;
   }
-
 }

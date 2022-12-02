@@ -1,37 +1,38 @@
 <h1 class="text-center mt-3 mb-3">Nuestra variedad de yerbas</h1>
 <table class="table">
-    <thead>
-        <tr class="text-center">
-            <th></th>
-            <th>Tipo</th>
-            <th>Sabor</th>
-            <th>Peso</th>
-            <th>Precio</th>
-            <th hidden>Stock</th>
-            <th hidden>Cantidad</th>
-            <th hidden>Comprar</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let product of products" [ngClass]="{'sale': product.sale && product.stock!=0}">
-            <td><img [src]="product.image" [alt]="product.type"></td>
-            <td class="text-center">{{product.type | uppercase}}</td>
-            <td>{{product.taste}}</td>
-            <td>{{product.weight}}<span>gr</span></td>
-            <td>{{product.price | currency}}</td>
-            <td>
-              <span class="badge text-bg-warning" *ngIf="product.stock==0">Sin stock</span>
-              <span class="badge text-bg-success" *ngIf="product.stock!=0 && product.sale">15% OFF</span>
-            </td>
-            <td>
-              <app-input-quantity [(quantity)]="product.quantity" [max]="product.stock" (maxReached)="maxReached($event)" *ngIf="product.stock"></app-input-quantity>
-            </td>
-            <td>
-              <input class="btn" (click)="addToCart(product)" type="submit" value="Agregar al carrito" *ngIf="product.stock!=0 else elseBlock">
-              <ng-template #elseBlock>
-                <input class="btn" type="submit" value="Agregar al carrito" disabled>
-              </ng-template>
-            </td>
-        </tr>
-      </tbody>
-    </table>
+  <thead>
+      <tr class="text-center">
+          <th></th>
+          <th>Tipo</th>
+          <th>Sabor</th>
+          <th>Peso</th>
+          <th>Precio</th>
+          <th hidden>Stock</th>
+          <th hidden>Cantidad</th>
+          <th hidden>Comprar</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products" [ngClass]="{'sale': product.sale && product.stock!=0}">
+        <td><img [src]="product.image" [alt]="product.type"></td>
+        <td class="text-center">{{product.type | uppercase}}</td>
+        <td>{{product.taste}}</td>
+        <td>{{product.weight}}<span>gr</span></td>
+        <td>{{product.price | currency}}</td>
+        <td>
+          <span class="badge text-bg-warning" *ngIf="product.stock==0">Sin stock</span>
+          <span class="badge text-bg-success" *ngIf="product.stock!=0 && product.sale">15% OFF</span>
+        </td>
+        <td>
+          <app-input-quantity [(quantity)]="product.quantity" [max]="product.stock" (maxReached)="maxReached($event)" *ngIf="product.stock"></app-input-quantity>
+        </td>
+        <td>
+          <input class="btn" (click)="addToCart(product)" type="submit" value="Agregar al carrito" *ngIf="product.stock!=0 else elseBlock">
+          <ng-template #elseBlock>
+            <input class="btn" type="submit" value="Agregar al carrito" disabled>
+          </ng-template>
+        </td>
+    </tr>
+  </tbody>
+</table>
+
