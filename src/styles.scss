@@ -1,20 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
-
 footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 30px;
+  height: 1.875rem;
   background-color: #e25858;
-  padding: 20px;
-  margin-top: 20px;
+  padding: 1.25rem;
+  margin-top: 1.25rem;
 }
 
 footer p {
-  margin: 0px;
+  margin: 0rem;
   color:#ffffdd;
 }
-
 
 nav {
   background-color: #384252;
@@ -22,7 +19,7 @@ nav {
 
 nav .navbar-brand{
     font-family: 'Satisfy', cursive;
-    font-size: 50px;
+    font-size: 3.125rem;
     color: #ffffdd;
 }
 
@@ -31,7 +28,7 @@ nav .navbar-brand{
 }
 
 #logo {
-    width: 40px;
+    width: 2.5rem;
 }
 
 .container {

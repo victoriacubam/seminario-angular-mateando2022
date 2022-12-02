@@ -1,28 +1,28 @@
 .container {
   background-color: #e25858;
-  border-radius: 50px;
-  padding: 30px;
+  border-radius: 3.125rem;
+  padding: 1.875rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 6.25rem;
 }
 
 img {
-  width: 40px;
-  margin: 5px;
+  width: 2.5rem;
+  margin: 0.3125rem;
 }
 
 
 .social div {
   display: flex;
   align-items: center;
-  margin: 30px;
+  margin: 1.875rem;
 }
 
 .social div p,
 .container p {
-  margin: 0px 0px 0px 10px;
+  margin: 0rem 0rem 0rem 0.625rem;
   color: #ffffdd;
   font-size: large;
 }
