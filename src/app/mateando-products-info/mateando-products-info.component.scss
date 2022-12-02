@@ -11,13 +11,13 @@ p{
 }
 
 
-h2, h3 {
-  margin: 2px 20px 2px 20px;
+h1, h2, h3 {
   color: #ffffdd;
 }
 
 img {
   width: 150px;
+  margin-left: 10px;
 }
 
 .desc, .perf {
@@ -26,7 +26,12 @@ img {
 }
 
 .info {
-  background-color: #e25858;
-  border-radius: 30px;
   padding: 40px;
+  margin: 0px 100px 0px 100px;
+}
+
+.info div {
+  background-color: #e25858;
+  border-radius: 50px;
+  margin-top: 20px;
 }
