@@ -1,13 +1,24 @@
-#container {
+.contain {
   display: flex;
   flex-direction: column;
+  margin: 0px 0px 0px 0px;
+  justify-content: flex-end;
+  padding: 5px;
+}
 
+#products {
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 80%;
+}
+
+#cart {
+  width: 10%;
 }
 
 
-
-@media only screen and (min-width: 1213px) {
-  #container {
+@media only screen and (min-width: 600px) {
+  .contain {
       display: flex;
       flex-direction: row;
   }

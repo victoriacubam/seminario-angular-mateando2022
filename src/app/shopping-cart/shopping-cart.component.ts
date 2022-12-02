@@ -10,12 +10,9 @@ import { ShoppingCartService } from '../shopping-cart.service';
   styleUrls: ['./shopping-cart.component.scss']
 })
 export class ShoppingCartComponent implements OnInit{
-
   shopCart$: Observable<Product[]>;
 
-  constructor(
-      private cart: ShoppingCartService){
-
+  constructor(private cart: ShoppingCartService, private products : ProductDataService){
     this.shopCart$ = cart.shopCart.asObservable();
   }
 
@@ -24,14 +21,15 @@ export class ShoppingCartComponent implements OnInit{
 
   empty() : void {
     this.cart.empty();
-   // this.productsDataService.getAll();
   }
 
   deleteP(product : Product) : void {
     this.cart.deleteP(product);
-    //this.productsDataService.getAll();
   }
 
+  getTotal(){
+    return this.cart.getTotal();
+  }
 
 
 

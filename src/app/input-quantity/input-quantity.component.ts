@@ -41,11 +41,4 @@ export class InputQuantityComponent implements OnInit{
     }
   }
 
-   /* changeQuantity(event:any, product: Product): void {
-    if(event.key>product.quantity){
-      //event.preventDefault();
-      console.log(event.key)
-      this.quantityChange.emit();
-    }
-  }*/
 }

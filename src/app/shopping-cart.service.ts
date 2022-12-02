@@ -8,10 +8,12 @@ import { Product } from './product-list/Product';
 export class ShoppingCartService {
 
   private _shopCart: Product[] = [];
+  total : number = 0;
 
   shopCart: BehaviorSubject<Product[]> = new BehaviorSubject([]);
 
-  constructor() { }
+  constructor() { 
+  }
 
   addToCart(product: Product) {
     let item: Product = this._shopCart.find((p1)=> p1.type == product.type);
@@ -32,5 +34,13 @@ export class ShoppingCartService {
     let index = this._shopCart.indexOf(product);
     this._shopCart.splice(index, 1);
     this.shopCart.next(this._shopCart);
+  }
+
+  getTotal(){
+    this.total=0;
+    this._shopCart.forEach(element => {
+      this.total+=element.price*element.quantity;
+    });
+    return this.total;
   }
 }
