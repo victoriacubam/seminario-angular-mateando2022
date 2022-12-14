@@ -1,6 +1,6 @@
 # Mateando
 
-Proyect realized in Angular Seminar for TUDAI - UNICEN
+Proyect realized in Angular Seminar for TUDAI - UNICEN (National University of the Center of the Province of Buenos Aires)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
 
